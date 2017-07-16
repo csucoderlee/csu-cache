@@ -3,7 +3,6 @@ package org.csu.command;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
-import org.csu.domain.LocationCache;
 import org.csu.domain.ProductInfo;
 import org.csu.utils.HttpClientUtils;
 
@@ -30,6 +29,29 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo>{
 //        Long cityId = productInfo.getCityId();
 //        String cityName = LocationCache.getCityName(cityId);
 //        productInfo.setCityName(cityName);
+        return productInfo;
+    }
+
+    @Override
+    protected String getCacheKey() {
+        return "product_info_" + productId;
+    }
+
+    @Override
+    protected ProductInfo getFallback() {
+        ProductInfo productInfo= new ProductInfo();
+        productInfo.setId(0L);
+        productInfo.setName("");
+        productInfo.setPrice(0.0D);
+        productInfo.setPictureList("");
+        productInfo.setSpecification("");
+        productInfo.setService("");
+        productInfo.setColor("");
+        productInfo.setSize("");
+        productInfo.setShopId(0L);
+        productInfo.setModifiedTime("");
+        productInfo.setCityId(0L);
+        productInfo.setCityName("");
         return productInfo;
     }
 }

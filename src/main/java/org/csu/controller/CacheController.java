@@ -2,6 +2,7 @@ package org.csu.controller;
 
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixObservableCommand;
+import org.csu.command.GetBrandNameCommand;
 import org.csu.command.GetCityNameCommand;
 import org.csu.command.GetProductInfoCommand;
 import org.csu.command.GetProductInfosCommand;
@@ -48,6 +49,11 @@ public class CacheController {
         //同步执行
         ProductInfo productInfo = getProductInfo.execute();
 
+        Long brandId = productInfo.getBrandId();
+        GetBrandNameCommand getBrandNameCommand = new GetBrandNameCommand(brandId);
+        String brandName = getBrandNameCommand.execute();
+        productInfo.setBrandName(brandName);
+
 //        信号量调用内部逻辑，进行了逻辑控制
 //        Long cityId = productInfo.getCityId();
 //        GetCityNameCommand getCityNameCommand = new GetCityNameCommand(cityId);
@@ -91,6 +97,15 @@ public class CacheController {
                 System.out.println(productInfo.toString());
             }
         });
+
+        //缓存代码示例
+//        for (String productId: productIds.split(",")) {
+//            GetProductInfoCommand getProductInfoCommand = new GetProductInfoCommand(Long.valueOf(productId));
+//            ProductInfo productInfo = getProductInfoCommand.execute();
+//            System.out.println(productInfo.toString());
+//            System.out.println(getProductInfoCommand.isResponseFromCache());
+//
+//        }
         return "success";
     }
 }
