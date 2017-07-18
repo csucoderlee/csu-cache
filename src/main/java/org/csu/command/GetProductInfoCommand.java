@@ -3,6 +3,7 @@ package org.csu.command;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.netflix.hystrix.HystrixCommandProperties;
 import org.csu.domain.ProductInfo;
 import org.csu.utils.HttpClientUtils;
 
@@ -15,12 +16,23 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo>{
 
     public GetProductInfoCommand(Long productId) {
         //GetProductInfoGroup这个名称的线程池
-        super(HystrixCommandGroupKey.Factory.asKey("GetProductInfoGroup"));
+        super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("GetProductInfoGroup"))
+            .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
+                .withCircuitBreakerRequestVolumeThreshold(30)
+                .withCircuitBreakerErrorThresholdPercentage(40)
+                .withCircuitBreakerSleepWindowInMilliseconds(3000))
+        );
+
         this.productId = productId;
     }
 
     @Override
     protected ProductInfo run() throws Exception {
+
+        if (productId.equals(-1L)) {
+            throw new Exception();
+        }
+
         String url = "http://127.0.0.1:8081/getProductInfo?productId="+ productId;
         String response = HttpClientUtils.sendGetRequest(url);
 
@@ -41,7 +53,7 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo>{
     protected ProductInfo getFallback() {
         ProductInfo productInfo= new ProductInfo();
         productInfo.setId(0L);
-        productInfo.setName("");
+        productInfo.setName("降级");
         productInfo.setPrice(0.0D);
         productInfo.setPictureList("");
         productInfo.setSpecification("");
