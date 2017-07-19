@@ -1,26 +1,25 @@
-package cn.edu.csu.software.command;
+package cn.edu.csu.software.newcommand;
 
+import cn.edu.csu.software.domain.ProductInfo;
+import cn.edu.csu.software.utils.HttpClientUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixObservableCommand;
-import cn.edu.csu.software.domain.ProductInfo;
-import cn.edu.csu.software.utils.HttpClientUtils;
+import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by lixiang on 2017 07 16 下午9:45.
+ * Created by lixiang on 2017 07 19 下午5:08.
  */
-public class GetProductInfosCommand extends HystrixObservableCommand<ProductInfo> {
-
+public class ProductCommandsCache extends HystrixObservableCommand<ProductInfo>{
     private String[] productIds;
 
-    public GetProductInfosCommand(String[] productIds) {
-        super(HystrixCommandGroupKey.Factory.asKey("GetProductInfoGroup"));
+    public ProductCommandsCache(String[] productIds) {
+        super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("productCommand")));
         this.productIds = productIds;
     }
-
     @Override
     protected Observable<ProductInfo> construct() {
         return Observable.create(new Observable.OnSubscribe<ProductInfo>() {
@@ -42,4 +41,13 @@ public class GetProductInfosCommand extends HystrixObservableCommand<ProductInfo
             }
         }).subscribeOn(Schedulers.io());
     }
+
+//    @Override
+//    protected String getCacheKey() {
+//        HystrixRequestContext context = HystrixRequestContext.initializeContext();
+//        System.out.println(isResponseFromCache());
+//        for (String productId: productIds) {
+//            return "product_info_" + productId;
+//        }
+//    }
 }

@@ -3,7 +3,7 @@ package cn.edu.csu.software.command;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
-import cn.edu.csu.software.software.domain.BrandCache;
+import cn.edu.csu.software.domain.BrandCache;
 
 /**
  * Created by lixiang on 2017 07 14 上午12:25.

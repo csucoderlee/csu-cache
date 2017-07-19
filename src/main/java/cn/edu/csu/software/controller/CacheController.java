@@ -6,7 +6,7 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixObservableCommand;
 import cn.edu.csu.software.command.GetProductInfoCommand;
 import cn.edu.csu.software.command.GetProductInfosCommand;
-import cn.edu.csu.software.software.domain.ProductInfo;
+import cn.edu.csu.software.domain.ProductInfo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;

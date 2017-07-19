@@ -1,4 +1,4 @@
-package cn.edu.csu.software.software.domain
+package cn.edu.csu.software.domain
 
 /**
  * Created by lixiang on 2017 07 19 上午12:18.

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
-import cn.edu.csu.software.software.domain.ProductInfo;
+import cn.edu.csu.software.domain.ProductInfo;
 import cn.edu.csu.software.utils.HttpClientUtils;
 
 /**

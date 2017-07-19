@@ -1,7 +1,7 @@
 package cn.edu.csu.software.command;
 
 import com.netflix.hystrix.*;
-import cn.edu.csu.software.software.domain.Category;
+import cn.edu.csu.software.domain.Category;
 
 /**
  * Created by lixiang on 2017 07 16 上午12:00.

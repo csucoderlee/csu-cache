@@ -1,6 +1,6 @@
 package cn.edu.csu.software.command;
 
-import cn.edu.csu.software.software.domain.LocationCache;
+import cn.edu.csu.software.domain.LocationCache;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
