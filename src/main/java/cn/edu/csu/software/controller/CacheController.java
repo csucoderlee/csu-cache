@@ -1,12 +1,12 @@
-package cn.edu.csu.controller;
+package cn.edu.csu.software.controller;
 
-import cn.edu.csu.command.GetBrandNameCommand;
-import cn.edu.csu.utils.HttpClientUtils;
+import cn.edu.csu.software.command.GetBrandNameCommand;
+import cn.edu.csu.software.utils.HttpClientUtils;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixObservableCommand;
-import cn.edu.csu.command.GetProductInfoCommand;
-import cn.edu.csu.command.GetProductInfosCommand;
-import cn.edu.csu.domain.ProductInfo;
+import cn.edu.csu.software.command.GetProductInfoCommand;
+import cn.edu.csu.software.command.GetProductInfosCommand;
+import cn.edu.csu.software.software.domain.ProductInfo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;

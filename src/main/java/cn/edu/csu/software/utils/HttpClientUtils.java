@@ -1,4 +1,4 @@
-package cn.edu.csu.utils;
+package cn.edu.csu.software.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

@@ -1,6 +1,6 @@
-package cn.edu.csu
+package cn.edu.csu.software
 
-import cn.edu.csu.collapser.HelloWorldHystrixCollapser
+import cn.edu.csu.software.collapser.HelloWorldHystrixCollapser
 import com.netflix.hystrix.HystrixEventType
 import com.netflix.hystrix.HystrixInvokableInfo
 import com.netflix.hystrix.HystrixRequestLog

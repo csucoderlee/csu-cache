@@ -1,10 +1,10 @@
-package cn.edu.csu.command;
+package cn.edu.csu.software.command;
 
+import cn.edu.csu.software.software.domain.LocationCache;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
 import com.netflix.hystrix.HystrixThreadPoolProperties;
-import cn.edu.csu.domain.LocationCache;
 
 /**
  * Created by lixiang on 2017 07 16 下午10:50.

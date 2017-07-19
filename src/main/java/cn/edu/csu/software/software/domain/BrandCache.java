@@ -1,4 +1,4 @@
-package cn.edu.csu.domain;
+package cn.edu.csu.software.software.domain;
 
 import java.util.HashMap;
 import java.util.Map;

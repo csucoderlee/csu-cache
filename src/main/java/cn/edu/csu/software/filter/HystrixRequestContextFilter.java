@@ -1,4 +1,4 @@
-package cn.edu.csu.filter;
+package cn.edu.csu.software.filter;
 
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 

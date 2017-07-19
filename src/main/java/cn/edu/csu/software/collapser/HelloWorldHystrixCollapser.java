@@ -1,4 +1,4 @@
-package cn.edu.csu.collapser;
+package cn.edu.csu.software.collapser;
 
 import com.netflix.hystrix.HystrixCollapser;
 import com.netflix.hystrix.HystrixCommand;

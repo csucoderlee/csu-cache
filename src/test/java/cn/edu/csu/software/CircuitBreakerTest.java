@@ -1,6 +1,6 @@
-package cn.edu.csu;
+package cn.edu.csu.software;
 
-import cn.edu.csu.utils.HttpClientUtils;
+import cn.edu.csu.software.utils.HttpClientUtils;
 
 /**
  * Created by lixiang on 2017 07 17 上午00:43.

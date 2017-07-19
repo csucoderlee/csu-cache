@@ -1,4 +1,4 @@
-package cn.edu.csu;
+package cn.edu.csu.software;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

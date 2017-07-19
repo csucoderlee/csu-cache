@@ -1,6 +1,6 @@
-package cn.edu.csu;
+package cn.edu.csu.software;
 
-import cn.edu.csu.filter.HystrixRequestContextFilter;
+import cn.edu.csu.software.filter.HystrixRequestContextFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

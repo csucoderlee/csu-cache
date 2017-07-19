@@ -1,10 +1,10 @@
-package cn.edu.csu.command;
+package cn.edu.csu.software.command;
 
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixObservableCommand;
-import cn.edu.csu.domain.ProductInfo;
-import cn.edu.csu.utils.HttpClientUtils;
+import cn.edu.csu.software.software.domain.ProductInfo;
+import cn.edu.csu.software.utils.HttpClientUtils;
 import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;

@@ -1,4 +1,4 @@
-package cn.edu.csu.controller;
+package cn.edu.csu.software.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

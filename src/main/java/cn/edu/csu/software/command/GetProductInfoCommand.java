@@ -1,11 +1,11 @@
-package cn.edu.csu.command;
+package cn.edu.csu.software.command;
 
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandProperties;
-import cn.edu.csu.domain.ProductInfo;
-import cn.edu.csu.utils.HttpClientUtils;
+import cn.edu.csu.software.software.domain.ProductInfo;
+import cn.edu.csu.software.utils.HttpClientUtils;
 
 /**
  * Created by lixiang on 2017 07 10 上午9:04.
